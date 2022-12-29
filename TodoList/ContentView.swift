@@ -9,17 +9,20 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        VStack {
-            Text("Swift Todo List")
-                .font(.largeTitle)
-                .fontWeight(.bold)
-                .foregroundColor(Color.green)
-                .multilineTextAlignment(.center)
-            Text("Ryeol's First Swift Project").font(.subheadline).foregroundColor(.gray)
-            NavigationLink(destination: ListView(), label: {Text("go")})
-        }
-        .padding()
-    }
+        NavigationView{
+            VStack(alignment: .center) {
+                Text("Swift Todo List")
+                    .font(.largeTitle)
+                    .fontWeight(.bold)
+                    .foregroundColor(Color.green)
+                    .multilineTextAlignment(.center)
+                Text("Ryeol's First Swift Project").font(.subheadline).foregroundColor(.gray)
+                NavigationLink(destination: ListView().navigationBarBackButtonHidden(true)) {
+                    Text("start").font(.title).foregroundColor(Color.white).frame(width: 100, height: 60,alignment: .center).background(RoundedRectangle(cornerRadius: 10).fill(Color.green)).padding(10)
+                }
+            }
+            .padding()
+        }.navigationBarTitle("SwiftUI")}
 }
 
 struct ContentView_Previews: PreviewProvider {
