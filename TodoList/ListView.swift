@@ -25,6 +25,8 @@ struct ListView: View {
                             HStack {
                                 Button(action: {} , label: {Image(systemName: "square")})
                                 Text(todoLists[i].content)
+                                Spacer()
+                                Button(action: {} , label: {Image(systemName: "trash")})
                             }
                         }
                     }
